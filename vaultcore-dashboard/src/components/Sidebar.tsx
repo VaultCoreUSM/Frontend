@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useSidebar } from '../context/SidebarContext';
 import './Sidebar.css';
 
 const Sidebar = () => {
-    const [isOpen, setIsOpen] = useState(true);
+    const { sidebarOpen, setSidebarOpen } = useSidebar();
+
     const toggleSidebar = () => {
-        setIsOpen(!isOpen);
+        setSidebarOpen(!sidebarOpen);
     };
     return (
         <>
@@ -16,13 +18,13 @@ const Sidebar = () => {
                 rel="stylesheet"
                 href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
             />
-            <div className={`sidebar-container ${isOpen ? '' : 'closed'}`}>
+            <div className={`sidebar-container ${sidebarOpen ? '' : 'closed'}`}>
 
                 <div className="titulo-sidebar">
                     <h1 className="logo text-2xl">VaultCore</h1>
                     <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
                         <i
-                            className={`fas fa-${isOpen ? 'times' : 'bars'} text-white`}
+                            className={`fas fa-${sidebarOpen ? 'times' : 'bars'} text-white`}
                             onClick={toggleSidebar}
                         />
                     </div>

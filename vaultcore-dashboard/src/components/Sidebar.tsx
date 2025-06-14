@@ -21,7 +21,10 @@ const Sidebar = () => {
             <div className={`sidebar-container ${sidebarOpen ? '' : 'closed'}`}>
 
                 <div className="titulo-sidebar">
-                    <h1 className="logo text-2xl">VaultCore</h1>
+                    
+                    <h1 className="logo text-2xl">
+                        <a href="/" className="flex items-center justify-center w-full h-full">VaultCore</a>    
+                    </h1>
                     <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
                         <i
                             className={`fas fa-${sidebarOpen ? 'times' : 'bars'} text-white`}
@@ -65,7 +68,7 @@ const Sidebar = () => {
                         <span className="ml-3">Configuración</span>
                     </a>
                     <a
-                        href="#"
+                        href="/reporte"
                         className="nav-item block px-4 py-3 rounded mb-1 flex items-center"
                     >
                         <i className="fas fa-file-alt w-5" />

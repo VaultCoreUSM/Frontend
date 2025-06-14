@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Header from './components/header/header';
 import Home from './pages/home/home';
+import Reporte from './pages/reporte/reporte';
 import { useSidebar } from './context/SidebarContext';
 import './index.css';
 
@@ -21,6 +22,8 @@ const App: React.FC = () => {
             <main className="flex-1 overflow-y-auto p-4">
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/reporte" element={<Reporte />} />
+                <Route path="*" element={<div>⚠️ 404 Not Found: {12}</div>} />
               </Routes>
             </main>
           </div>
